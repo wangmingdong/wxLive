@@ -1,0 +1,32 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <live-player id="player" src="rtmp://rtmp.open.ys7.com/openlive/2398f8ea9a8a4ff1ab7a2917dddbe8b1" mode="live" autoplay bindstatechange="statechange" binderror="error" />
+
+    <cover-view class="video-menu">
+      <cover-view class="video-log-container">
+        <cover-view class="video-log-text">{{videoLog}}</cover-view>
+        <!-- <cover-view class="video-log-text">videoLog</cover-view> -->
+      </cover-view>
+      <cover-view class="video-option-menu">
+        <cover-image wx:if="{{isPlay}}" class="flex-box video-image" src="../../images/pause.png" bindtap="bindPause"></cover-image>
+        <cover-image wx:else="{{!isPlay}}" class="flex-box video-image" src="../../images/play.png" bindtap="bindPlay"></cover-image>
+        <cover-image class="flex-box video-image-60" src="../../images/stop.png" bindtap="bindStop"></cover-image>
+        <!-- 开启音量  -->
+        <cover-image wx:if="{{!openVoice}}" class="flex-box video-image-80" src="../../images/voice.png" bindtap="bindResume"></cover-image>
+        <!--关闭音量  -->
+        <cover-image wx:else="{{openVoice}}" class="flex-box video-image-80" src="../../images/voice-close.png" bindtap="bindMute"></cover-image>
+        <!--全屏  -->
+        <cover-image wx:if="{{!isScreen}}" class="flex-box video-image-60" src="../../images/fullScreen.png" data-variable="{{true}}" bindtap="bindScreen"></cover-image>
+        <!--退出全屏  -->
+        <cover-image wx:if="{{isScreen}}" class="flex-box video-image-60" src="../../images/exitScreen.png" data-variable="{{false}}" bindtap="bindScreen"></cover-image>
+      </cover-view>
+    </cover-view>  
+    <view class="btn-area">
+      <button bindtap="bindPlay" class="page-body-button" type="primary">播放</button>
+      <button bindtap="bindPause" class="page-body-button" type="primary">暂停</button>
+      <button bindtap="bindStop" class="page-body-button" type="primary">停止</button>
+      <button bindtap="bindResume" class="page-body-button" type="primary">恢复</button>
+      <button bindtap="bindMute" class="page-body-button" type="primary">静音</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <live-pusher id="pusher" url="rtmp://27437.livepush.myqcloud.com/live/27437_2a62dc1d21?bizid=27437&txSecret=5e0b705b4b3c7159f05a06985efb9abc&txTime=5B60877F" mode="RTC" autopush bindstatechange="statechange" />
+
+    <view class="btn-area">
+      <button bindtap="bindStart" class="page-body-button" type="primary">播放推流</button>
+      <button bindtap="bindPause" class="page-body-button" type="primary">暂停推流</button>
+      <button bindtap="bindStop" class="page-body-button" type="primary">停止推流</button>
+      <button bindtap="bindResume" class="page-body-button" type="primary">恢复推流</button>
+      <button bindtap="bindSwitchCamera" class="page-body-button" type="primary">切换前后摄像头</button>
+    </view>
+  </view>
+</view>

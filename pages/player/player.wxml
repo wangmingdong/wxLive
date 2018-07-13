@@ -1,0 +1,19 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <live-player id="player" src="rtmp://27437.liveplay.myqcloud.com/live/27437_2a62dc1d21" mode="live" autoplay bindstatechange="statechange" binderror="error" />
+
+      <cover-view class="video-menu">
+      <cover-image wx:if="{{isPlay}}" class="flex-box video-image" src="../../images/pause.png" bindtap="bindPause"></cover-image>
+      <cover-image wx:else="{{!isPlay}}" class="flex-box video-image" src="../../images/play.png" bindtap="bindPlay"></cover-image>
+      <cover-image class="flex-box video-image-60" src="../../images/stop.png" bindtap="bindStop"></cover-image>
+      <cover-view wx:if="{{videoLog}}">{{videoLog}}</cover-view>
+    </cover-view>  
+    <view class="btn-area">
+      <button bindtap="bindPlay" class="page-body-button" type="primary">播放</button>
+      <button bindtap="bindPause" class="page-body-button" type="primary">暂停</button>
+      <button bindtap="bindStop" class="page-body-button" type="primary">停止</button>
+      <button bindtap="bindResume" class="page-body-button" type="primary">恢复</button>
+      <button bindtap="bindMute" class="page-body-button" type="primary">静音</button>
+    </view>
+  </view>
+</view>
